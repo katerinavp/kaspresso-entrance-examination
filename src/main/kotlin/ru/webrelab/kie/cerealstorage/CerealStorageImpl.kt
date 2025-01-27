@@ -26,7 +26,7 @@ class CerealStorageImpl(
 
         val availableAmountContainers = (storageCapacity / containerCapacity).toInt()
 
-        if (storage.size >= availableAmountContainers) {
+        if (storage.size >= availableAmountContainers && !storage.contains(cereal)) {
             throw IllegalStateException("Хранилище не позволяет разместить ещё один контейнер для новой крупы")
         }
         if (containerBalance <= 0f) {

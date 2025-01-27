@@ -32,7 +32,8 @@ class CerealStorageImplTest {
     fun `should throw if storage can not accept a new container `() {
         storage.addCereal(Cereal.BUCKWHEAT, 5f)
         storage.addCereal(Cereal.PEAS, 5f)
-
+        storage.addCereal(Cereal.BUCKWHEAT, 3f)
+        storage.addCereal(Cereal.PEAS, 1f)
         assertThrows(IllegalStateException::class.java) {
             storage.addCereal(Cereal.BULGUR, 5f)
 
